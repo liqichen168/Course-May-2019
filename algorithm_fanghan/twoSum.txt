@@ -11,7 +11,7 @@ public int[] twoSum(int[] nums, int target) {
         }
         return two;
 }
-2.×îÓÅ½âO(n)
+2.O(n)
 public int[] twoSum(int[] nums, int target) {	
         int[] result=new int[2];
         HashMap<Integer,Integer> test = new HashMap<Integer,Integer>();
