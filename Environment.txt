@@ -1,0 +1,10 @@
+1) IntelliJ - Ultimate version (free with Student account)
+2) Github + Git
+3) Maven - comes with Intellij - Need setup to windows env
+4) Java 8 - JDK
+5) Tomcat 7/8
+6) * Sublime Text
+7) MySQL//Oracle/SQL SERVER/// NoSQL
+
+
+
