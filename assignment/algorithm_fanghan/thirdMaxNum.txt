@@ -1,0 +1,20 @@
+1.O(nlogn)
+public int thirdMax(int[] nums) {
+        HashMap<Integer,Integer> test=new HashMap<Integer, Integer>();
+        Arrays.sort(nums);
+        int result=0;
+        for(int i=nums.length-1;i>=0;i--){
+            if(test.containsKey(nums[i])){
+                continue;
+            }else{
+                test.put(nums[i],i);
+                if(test.size()==3){
+                    result=nums[i];
+                    break;
+                }
+            }
+        }
+        if (test.size()<3)
+            result=nums[nums.length-1];
+        return result;
+}
