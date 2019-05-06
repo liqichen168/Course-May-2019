@@ -1,0 +1,18 @@
+public String reverseVowels(String s) {
+        Stack<Character> replace=new Stack<Character>();
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)=='A'||s.charAt(i)=='E'||s.charAt(i)=='I'||s.charAt(i)=='O'||s.charAt(i)=='U'
+            ||s.charAt(i)=='a'||s.charAt(i)=='e'||s.charAt(i)=='i'||s.charAt(i)=='o'||s.charAt(i)=='u'){
+                replace.push((char)s.charAt(i));
+            }
+        }
+        StringBuffer sbr=new StringBuffer();
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)=='A'||s.charAt(i)=='E'||s.charAt(i)=='I'||s.charAt(i)=='O'||s.charAt(i)=='U'
+                    ||s.charAt(i)=='a'||s.charAt(i)=='e'||s.charAt(i)=='i'||s.charAt(i)=='o'||s.charAt(i)=='u'){
+                sbr.append(replace.pop());
+            }else
+                sbr.append(s.charAt(i));
+        }
+        return  sbr.toString();
+}
