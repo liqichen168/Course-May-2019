@@ -1,0 +1,22 @@
+10. Squares of a Sorted Array
+
+class Solution {
+    public int[] sortedSquares(int[] A) {
+        int i = 0, j = A.length -1, k=j;
+        int[] B = new int[A.length];
+        while(k>=0){
+            int x = A[i]*A[i], y = A[j]*A[j];
+            if(x >= y){
+                B[k] = x;
+                i++;
+                k--;
+            } else{
+                B[k] = y;
+                j--;
+                k--;
+            }
+        }
+        return B;
+ 
+    }
+}

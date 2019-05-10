@@ -1,0 +1,29 @@
+1. Middle of the Linked List
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode middleNode(ListNode head) {
+        ListNode p, q;
+        
+        p = head;
+        q = head;
+        
+        while(true) {
+            if (p != null && p.next != null) {
+                p = p.next.next;
+                q = q.next;
+            }
+            else {
+                break;
+            }
+        }
+        return q;
+    }
+}

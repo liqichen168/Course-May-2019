@@ -1,0 +1,23 @@
+2. Balanced Binary Tree
+
+class Solution {
+    public boolean isBalanced(TreeNode root) {
+        int rootVal = helper(root);
+        return rootVal >= 0;
+    }
+    
+    /** This helper method returns "-1" if not balanced, 
+    else return the true depth of this node.
+    */
+    private int helper(TreeNode node) {
+        if (node == null) {
+            return 0;
+        }
+        int left = helper(node.left);
+        int right = helper(node.right);
+        if (left < 0 || right < 0 || Math.abs(left - right) > 1) {
+            return -1;
+        }
+        return Math.max(left, right) + 1;
+    }
+}

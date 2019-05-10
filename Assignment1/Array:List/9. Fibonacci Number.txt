@@ -1,0 +1,14 @@
+9. Fibonacci Number
+class Solution {
+    public int fib(int N) {
+        if(N==1) return 1;
+        if(N==0) return 0;
+        int i=0; int j=1; int temp=0;  
+        for(;N>1;N--){
+            temp=j;
+            j=i+j;
+            i=temp;
+        }
+        return j;
+    }
+}

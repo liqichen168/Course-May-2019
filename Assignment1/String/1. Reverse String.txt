@@ -1,0 +1,15 @@
+1. Reverse String
+
+class Solution {
+    public void reverseString(char[] s) {
+        int last = s.length-1;
+        int start =0;
+        while(start<last){
+            char c=s[start];
+            s[start]=s[last];
+            s[last]=c;
+            start++;
+            last--;
+        }
+    }
+}
