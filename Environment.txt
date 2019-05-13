@@ -4,7 +4,7 @@
 4) Java 8 - JDK
 5) Tomcat 7/8
 6) * Sublime Text
-7) MySQL//Oracle/SQL SERVER/// NoSQL
+7) MySQL
 
 
 
