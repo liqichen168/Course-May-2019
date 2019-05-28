@@ -10,6 +10,9 @@
 
     <context:component-scan base-package="com.course.demo"></context:component-scan>
 
+    <!--for rest controller-->
+    <mvc:annotation-driven></mvc:annotation-driven>
+
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix">
             <value>/WEB-INF/views/</value>
