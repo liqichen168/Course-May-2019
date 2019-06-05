@@ -1,0 +1,9 @@
+public List<Integer> topKFrequent(int[] nums, int k) {
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        List<Integer> res = new LinkedList<Integer>();
+        PriorityQueue<Map.Entry<Integer, Integer>> queue = new PriorityQueue<Map.Entry<Integer, Integer>>((a,b)->(b.getValue()-a.getValue()));
+        for(int val : nums) map.put(val, map.getOrDefault(val, 0) + 1);
+        queue.addAll(map.entrySet());
+        for(int i = 0;i < k;i++) res.add(queue.poll().getKey());
+        return res;
+}

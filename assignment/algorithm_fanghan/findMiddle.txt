@@ -1,0 +1,9 @@
+public ListNode middleNode(ListNode head) {
+        ListNode fast=head;
+        ListNode normal=head;
+        while(fast.next!=null&&fast!=null){
+            normal=normal.next;
+            fast=fast.next.next;
+        }
+        return normal;
+}
