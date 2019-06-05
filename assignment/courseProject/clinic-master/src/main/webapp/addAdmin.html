@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:c="http://www.w3.org/1999/XSL/Transform">
+<head>
+
+<meta charset="ISO-8859-1">
+<title>Registration Admin</title>
+<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="css/favicon.ico">
+
+	<!-- Bootstrap core CSS -->
+	<link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+	<style type="text/css">
+		td{
+			width: 40%;
+		}
+	</style>
+
+</head>
+<body id="body_lightblue">
+	<div id="div1">
+		<h1>Add New Admin</h1>
+		<form id="form1" action="SaveAdmin" method="post">
+			<div class="form-group">
+			<table>
+				<tr>
+					<td>Name and Surname:</td>
+					<td><input type="text" class="form-control" name="nameAndSurname"
+						required="required" /></td>
+				</tr>
+				<tr>
+					<td>User Name:</td>
+					<td><input type="text" class="form-control" name="userName" required="required" /></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input type="password" class="form-control" name="password" required="required" /></td>
+				</tr>
+				<tr>
+					<td>Re enter Password:</td>
+					<td><input type="password" class="form-control" name="repassword"
+						required="required" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" class="btn btn-primary" value="Save Admin" /></td>
+				</tr>
+			</table>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
