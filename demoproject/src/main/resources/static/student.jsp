@@ -12,6 +12,6 @@
     <title>Student MVC Course Demo</title>
   </head>
   <body>
-      This is my demo HELLO jsp page!
+      <p>${student.name} LOVE ${student.course}</p>
   </body>
 </html>

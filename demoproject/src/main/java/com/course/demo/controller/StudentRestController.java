@@ -1,9 +1,11 @@
 package com.course.demo.controller;
 
 import com.course.demo.model.Student;
+import com.course.demo.service.StudentService;
 import com.course.demo.util.StudentHelper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Iterator;
 import java.util.List;
@@ -13,12 +15,22 @@ import java.util.stream.Collectors;
 @RequestMapping("/rest")
 public class StudentRestController {
 
+    @Autowired
+    Environment env;
+
+
+    @GetMapping("/hello")
+    public String greeting(){
+        return "Hello Demo Boot!";
+    }
+
+
+    @Autowired
+    private StudentService service;
+
     @GetMapping("/student/{id}")
     public Student getStudentById(@PathVariable int id){
-        Student result = StudentHelper.studentDB.stream().filter(
-                s -> s.getId() == id
-        ).findFirst().orElse(null);
-        return result;
+        return service.getStudentById(id);
     }
 
     @RequestMapping(value = "/student/all", method = RequestMethod.GET)
