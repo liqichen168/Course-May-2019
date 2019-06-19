@@ -25,4 +25,17 @@ public class StudentRestController {
     public List<Student> getAllStudents(){
         return service.getAllStudents();
     }
+
+
+    @GetMapping("/around")
+    public String aroundMethod(){
+        return service.aroundMethod();
+    }
+
+    @GetMapping("/throw")
+    public String throwMethod(){
+        return service.throwMethod();
+    }
+
+
 }

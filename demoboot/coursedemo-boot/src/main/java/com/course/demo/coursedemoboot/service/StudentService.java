@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import java.lang.reflect.Method;
 import java.util.List;
 
 @Service
@@ -17,5 +16,22 @@ public class StudentService {
 
     public List<Student> getAllStudents(){
         return helper.getAllStudents();
+    }
+
+    public String aroundMethod(){
+        try {
+            System.out.println("*** In Service, AroundMethod started*** ");
+            Thread.sleep(2000);
+            System.out.println("*** In Service, AroundMethod ended*** ");
+        }catch(InterruptedException e){
+            System.out.println("Thread is interrupted!");
+        }
+        return "";
+    }
+
+
+    public String throwMethod(){
+        System.out.println("*** In service.throwMethod ***");
+        throw new IndexOutOfBoundsException();
     }
 }
