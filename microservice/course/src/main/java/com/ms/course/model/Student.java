@@ -1,5 +1,7 @@
 package com.ms.course.model;
 
+import java.util.Objects;
+
 public class Student {
 
     private int id;
@@ -36,5 +38,19 @@ public class Student {
 
     public void setMajor(String major) {
         this.major = major;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Student)) return false;
+        Student student = (Student) o;
+        return getId() == student.getId();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
     }
 }
