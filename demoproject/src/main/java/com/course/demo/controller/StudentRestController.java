@@ -5,7 +5,9 @@ import com.course.demo.service.StudentService;
 import com.course.demo.util.StudentHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Iterator;
 import java.util.List;
@@ -34,8 +36,11 @@ public class StudentRestController {
     }
 
     @RequestMapping(value = "/student/all", method = RequestMethod.GET)
-    public List<Student> getAllStudents(){
-        return StudentHelper.studentDB;
+    public ModelAndView getAllStudents(){
+        ModelAndView mv=new ModelAndView("students");
+//        return StudentHelper.studentDB;
+        mv.addObject("studentsList", StudentHelper.studentDB);
+        return mv;
     }
 
     @PutMapping("/student/update/{id}")

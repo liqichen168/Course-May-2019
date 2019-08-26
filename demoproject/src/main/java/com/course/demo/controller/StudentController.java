@@ -16,7 +16,7 @@ public class StudentController {
 
     @GetMapping("/hello")
     public String test(){
-        return "/WEB-INF/views/hello.jsp";
+        return "hello";
     }
 
     @GetMapping("/student/{id}")
