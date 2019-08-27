@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/rest")
+//@RequestMapping("/rest")
 public class StudentRestController {
 
     @Autowired
@@ -43,21 +43,36 @@ public class StudentRestController {
         return mv;
     }
 
-    @PutMapping("/student/update/{id}")
-    public List<Student> updateStudentById(
-            @PathVariable int id,
-            @RequestParam("major") String newMajor
-    ){
-        List<Student> list = StudentHelper.studentDB.stream().map(
+//    @PutMapping("/student/update/{id}")
+//    public List<Student> updateStudentById(
+//            @PathVariable int id,
+//            @RequestParam("major") String newMajor
+//    ){
+//        List<Student> list = StudentHelper.studentDB.stream().map(
+//                student -> {
+//                    if(student.getId() == 1){
+//                        student.setMajor(newMajor);
+//                    }
+//                    return student;
+//                }
+//        ).collect(Collectors.toList());
+//
+//        return list;
+//    }
+    @PostMapping("/student/update")
+    public ModelAndView updateStudentById(@RequestParam("studentId") String sid,@RequestParam("major") String newMajor){
+        ModelAndView mv=new ModelAndView("students");
+        int id=Integer.parseInt(sid);
+        List<Student> list=StudentHelper.studentDB.stream().map(
                 student -> {
-                    if(student.getId() == 1){
+                    if(student.getId()==id){
                         student.setMajor(newMajor);
                     }
                     return student;
                 }
         ).collect(Collectors.toList());
-
-        return list;
+        mv.addObject("studentsList",list);
+        return mv;
     }
 
     @PostMapping("/student/new")

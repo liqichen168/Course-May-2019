@@ -26,9 +26,11 @@
       </c:forEach>
 
         ------------------------------
-        <form  action="/student/update" method="POST">
-            <label>new Major: </label>
-            <input name="major" type="text"/></label>
+        <form  action="/student/update" method="Post">
+            <label>Student Id:<input name="studentId" type="text"></label>
+            <br>
+            <label>New Major:<input name="major" type="text"/></label>
+            <br>
             <button type="submit">update</button>
         </form>
   </body>
